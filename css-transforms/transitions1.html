@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+    <title>3D Transform experiments</title>
+	<style type="text/css">
+		.wrapper{ -webkit-perspective: 1800; position:relative;}
+		.mydiv{ 
+			width:300px; margin:100px auto; height:300px; position:relative; 
+			background:orange; color:green; padding:20px;
+			-webkit-border-radius:10px;
+			-moz-border-radius:10px;
+		}
+		.photo{
+			width:300px; margin:100px auto;position:relative; 
+			background:orange; color:green; padding:20px;
+			-webkit-border-radius:10px;
+			-moz-border-radius:10px;
+		}
+		.animation{-webkit-transition: all 0.3s linear;}
+		.animationEase{-webkit-transition: all 1s ease-out;}
+		.animationCubic{-webkit-transition: all 1s cubic-bezier(1.0, 0, 0, 1.0);}
+		.animation:hover,.animationEase:hover,.animationCubic:hover{ 
+			-webkit-box-shadow: 0px 0px 20px #000; background:green; color:orange;
+			-webkit-transform: scale3d(1.5, 1.4, 1) rotate3d(100, 0, 100, 355deg);
+			-moz-box-shadow: 0px 0px 20px #000; background:green; color:orange;
+			-moz-transform: scale3d(1.5, 1.5, 1) rotate3d(100, 0, 100, 355deg);
+		}
+		.rotate{
+			-webkit-transition: all 2s linear;
+			-webkit-transform: rotateX(23deg);
+		}
+		.rotate:hover{
+			-webkit-transform: rotateX(180deg);
+		}
+		.rotate3d{
+			-webkit-transition:translate3d(10,20,30);
+		}
+		.rotate3d:hover{
+			
+		}
+		.skew3d{
+			-webkit-transform: rotate3d(1,0,0,30deg); 
+		}
+		.skew3d:hover{
+			-webkit-animation: flip1 2s ease-in-out;
+		}
+		.animatedFlip{
+			-webkit-animation: flip1 2s ease-in-out;
+		}
+		@-webkit-keyframes flip1{
+			
+			0% { 
+				-webkit-transform: rotate3d(1,0,0,30deg); 
+			}
+			50% { 
+				-webkit-transform: rotate3d(1,0,0,180deg); 
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+	
+		<div class="photo rotate3d">
+			<img src="test.png" alt="">
+			
+		</div>
+		<div class="photo rotate">
+			<img src="test.png" alt="">
+			
+		</div>
+		<div class="photo animatedFlip">
+			<img src="test.png" alt="">
+			
+		</div>
+		<div class="mydiv skew3d">
+			<img src="test.png" alt="">
+			
+		</div>
+		<div class="mydiv animation">
+			Lorem Ipsum tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat
+			
+		</div>
+		<div class="mydiv animationEase">
+			Lorem Ipsum tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat
+			
+		</div>
+		<div class="mydiv animationCubic">
+			Lorem Ipsum tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat
+			
+		</div>
+	</div>
+</body>
+</html>

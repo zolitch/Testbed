@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <title>Mustache test</title>
+	<script type="text/javascript" src="../js/jquery-1.6.4.js"></script>
+	
+	<script type="text/javascript" src="mustache.js"></script>
+	
+
+	
+</head>
+<body>
+	<script id="template" type="text/x-mustache">
+			{{#bug}}
+			{{/bug}}
+		<ul>
+			{{#items}}
+			<li>{{name}} / {{url}}</li>
+			{{/items}}
+			{{#empty}}
+			<li>The list is empty.</li>
+			{{/empty}}
+		</ul>
+	</script>
+	
+	<div id="contentWrap">
+		<ul>
+			<li>Default Content</li>
+			<li>Default Content</li>
+		</ul>
+	
+	</div>
+	<script type="text/javascript">
+	
+		var view = {
+		  "header": "Colors",
+		  "items": [
+			  {"name": "red", "first": true, "url": "#Red"},
+			  {"name": "green", "link": true, "url": "#Green"},
+			  {"name": "blue", "link": true, "url": "#Blue"}
+		  ],
+		  "empty": false
+		};
+		var template = $('#template').html();
+		var content = Mustache.to_html(template, view);
+		jQuery('#contentWrap').html(content);
+	</script>
+</body>
+</html>
