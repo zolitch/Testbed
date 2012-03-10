@@ -1,0 +1,1 @@
+cscript //nologo tools/less.js-windows/lessc.wsf css/styles.less css/output.css -compress
