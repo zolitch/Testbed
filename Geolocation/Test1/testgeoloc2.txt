@@ -1,0 +1,11 @@
+// Geolocation API Samples
+
+
+///////////////
+// Test that the browser supports the GeoLocation object
+/*global window, jQuery */
+
+(function ($, google) {
+
+
+})(window.jQuery, window.google);

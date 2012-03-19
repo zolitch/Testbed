@@ -1,0 +1,26 @@
+
+
+/*
+    font: CharterBTItalic
+**************************************************************/
+@font-face {
+    font-family: 'CharterBTItalic';
+    src: url('fonts/charterbt-italic/charteritcbybt-italic-webfont.eot');
+    src: url('fonts/charterbt-italic/charteritcbybt-italic-webfont.eot?iefix') format('eot'),
+         url('fonts/charterbt-italic/charteritcbybt-italic-webfont.woff') format('woff'),
+         url('fonts/charterbt-italic/charteritcbybt-italic-webfont.ttf') format('truetype'),
+         url('fonts/charterbt-italic/charteritcbybt-italic-webfont.svg#webfontoUUWRJtE') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    font-family:'CharterBTItalic';
+}
+.wrapper{
+	
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/images/hiefix.png,sizingMethod=crop);
+        zoom:1;
+
+}
