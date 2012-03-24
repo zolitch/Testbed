@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>Vertical scrollbar with jQuery UI</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+
+<style type="text/css">
+body{font-family:Arial, Helvetica, sans-serif;color:#666666;min-width:600px}
+h1{margin:20px}
+p#return{clear:left;margin-left:50px;margin-top:30px}
+a:active, a:focus{outline:none}
+/* css for scrollbar below here*/
+.twtr-timeline { float:left;overflow: auto; width: 420px; height:700px;position:relative;border:1px solid gray;margin-left:50px;margin-bottom:25px;display:inline}
+.twtr-tweets {position:absolute;top:0;left:0}
+.twtr-tweet {float:left;display:inline;}
+.slider-wrap{float:left;background-color:#313131;width:2px;border:1px solid gray;border-left:none;}
+.slider-twitter{position:relative;height:100%}
+.ui-slider-handle{width:15px;height:30px;margin:0 auto;background-color:#555;display:block;position:absolute;}
+input{font-size:12px}
+
+.twtr-timeline{overflow:auto; width:300px; height:400px; float:left;}
+</style>
+
+</head>
+
+<body>
+
+<script type="text/javascript" src="/javascript/vertical.slider.js"></script>
+
+
+<h1>Vertical scrollbar with jQuery UI and twitter integration</h1>
+
+
+
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+
+<div style="clear:both;"><br /><br /></div>
+
+
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'list',
+  rpp: 100,
+  interval: 20000,
+  title: '',
+  subject: '',
+  width: 'auto',
+  height: 709,
+  theme: {
+    shell: {
+      background: 'transparent',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#bab8b8',
+      links: '#898989'
+    }
+  },
+  features: {
+    scrollbar: true,
+    loop: false,
+    live: true,
+    hashtags: true,
+    timestamp: true,
+    avatars: true,
+    behavior: 'all'
+  }
+}).render().setList('Official_RFU', 'general-rugby').start();
+</script>
+
+
+
+
+
+
+<a class="attachscroll" href="none">attach scroll bars</a>
+
+
+
+
+
+<script type="text/javascript" src="js/vertical.scroller.js"></script>
+
+
+
+
+</body>
+</html>

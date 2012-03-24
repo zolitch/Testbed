@@ -1,0 +1,503 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6 no-js"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7 no-js"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+	<title>jQuery.galleryCarousel demo</title>
+    <link rel="stylesheet" href="jquery.galleryCarousel.css" type="text/css" media="screen" />
+    <style type="text/css">
+		body{
+			font-family: Arial, Helvetica, "Nimbus Sans L", "Free Sans", Sans-Serif;
+			color:#555;
+			font-size: 12px; /*12px*/
+			padding:16px;
+		}
+		p{font-size:12px;}
+		pre{
+			background:#ddd;
+			padding:16px;
+			text-align:left;
+			font-size:1.2em;
+		}
+		
+		.docs{
+			clear:both;
+			width:40%;
+		}
+        .contentWrapper {
+            position: relative;
+			margin:20px 20px;
+        }
+		.gallerysmallwidth{
+			/*width:400px;*/
+			float:left;
+		}
+    </style>
+    <script src="lib/jquery-1.5.2.min.js" type="text/javascript"></script>
+    <script src="lib/jquery-plugins/jquery.cycle.all.js" type="text/javascript"></script>
+    <script src="lib/jquery-plugins/jquery.jcarousel.js" type="text/javascript"></script>
+    <script src="lib/jquery-plugins/jquery.galleryCarousel.js" type="text/javascript"></script>
+    <script type="text/javascript">
+		$ = jQuery.noConflict();
+        $(function(){
+                $('.gallery1').galleryCarousel({
+					height: 700, /*this is the default height set in the plugin*/
+					auto: false,
+					cycleSettings :{}
+				});
+                $('.gallery2').galleryCarousel({
+					height: 600, /*this is the default height set in the plugin*/
+					auto: false,
+					cycleSettings :{}
+				});
+        });
+    </script>
+  </head>
+  <body>
+	<div id="container">
+		<div class="header">
+			<header>
+				<h1>Gallery Carousel<h1>
+			</header>
+		</div>
+		<h2>Examples:</h2>
+		<div class="contentWrapper">
+		
+			<div>
+				<p>other content</p>
+				<p>other content</p>
+				<p>other content</p>
+				<p>other content</p>
+				
+			</div>
+			
+				<h3>Gallery 1</h3>
+				<div class="galleryCarousel gallery1 cc">
+					<div class="galleryCarousel-images">
+						<ul class="galleryCarousel-cycle">
+							<li id="carousel-item-1" >
+								
+								<div class="galleryCarousel-images-caption">
+									
+									<div class="images-caption-content">
+										
+										<h3>Image 1 Header</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+									</div>
+									<div class="images-caption-trans">&nbsp;</div>
+									
+
+								</div>
+								<img src="images/image-01.jpg" title="dummy image 1" alt="dummy image" />
+								
+							</li>
+							
+							<li id="carousel-item-2">
+								<div class="galleryCarousel-images-caption">
+									
+									<div class="images-caption-content">
+										
+										<h3>Image 2 Header</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+									</div>
+									<div class="images-caption-trans">&nbsp;</div>
+									
+
+								</div>
+								<img src="images/image-02.jpg" title="dummy image 2" alt="dummy image" />
+								
+							</li>
+							<li id="carousel-item-3">
+								<div class="galleryCarousel-images-caption">
+									
+									<div class="images-caption-content">
+										
+										<h3>Image 3 Header</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+									</div>
+									<div class="images-caption-trans">&nbsp;</div>
+									
+
+								</div>
+								<img src="http://placekitten.com/g/700/300" title="dummy image 3" alt="dummy image" />
+								
+							</li>
+							<li id="carousel-item-4">
+								<div class="galleryCarousel-images-caption">
+									
+									<div class="images-caption-content">
+										
+										<h3>Image 4 Header</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+									</div>
+									<div class="images-caption-trans">&nbsp;</div>
+									
+
+								</div>
+								<img src="http://placekitten.com/g/400/800" title="dummy image 4" alt="dummy image" />
+								
+							</li>
+							<li id="carousel-item-5">
+								<div class="galleryCarousel-images-caption">
+									
+									<div class="images-caption-content">
+										
+										<h3>Image 5 Header</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+									</div>
+									<div class="images-caption-trans">&nbsp;</div>
+									
+
+								</div>
+								<img src="images/image-01.jpg" title="dummy image 5" alt="dummy image" />
+								
+							</li>
+							<li id="carousel-item-6">
+								<div class="galleryCarousel-images-caption">
+									
+									<div class="images-caption-content">
+										
+										<h3>Image 6 Header</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+									</div>
+									<div class="images-caption-trans">&nbsp;</div>
+									
+
+								</div>
+								<img src="images/image-02.jpg" title="dummy image 6" alt="dummy image" />
+								
+							</li>
+							<li id="carousel-item-7">
+								<div class="galleryCarousel-images-caption">
+									
+									<div class="images-caption-content">
+										
+										<h3>Image 7 Header</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+									</div>
+									<div class="images-caption-trans">&nbsp;</div>
+									
+
+								</div>
+								<img src="images/image-01.jpg" title="dummy image 7" alt="dummy image" />
+								
+							</li>
+							<li id="carousel-item-8">
+								<div class="galleryCarousel-images-caption">
+									
+									<div class="images-caption-content">
+										
+										<h3>Image 8 Header</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+									</div>
+									<div class="images-caption-trans">&nbsp;</div>
+									
+
+								</div>
+								<img src="images/image-01.jpg" title="dummy image 8" alt="dummy image" />
+								
+							</li>
+							<li id="carousel-item-9" >
+								
+								<div class="galleryCarousel-images-caption">
+									
+									<div class="images-caption-content">
+										
+										<h3>Image 1 Header</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+									</div>
+									<div class="images-caption-trans">&nbsp;</div>
+									
+
+								</div>
+								<img src="images/image-01.jpg" title="dummy image 1" alt="dummy image" />
+								
+							</li>
+							
+							<li id="carousel-item-10">
+								<div class="galleryCarousel-images-caption">
+									
+									<div class="images-caption-content">
+										
+										<h3>Image 2 Header</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+									</div>
+									<div class="images-caption-trans">&nbsp;</div>
+									
+
+								</div>
+								<img src="images/image-02.jpg" title="dummy image 2" alt="dummy image" />
+								
+							</li>
+							<li id="carousel-item-11">
+								<div class="galleryCarousel-images-caption">
+									
+									<div class="images-caption-content">
+										
+										<h3>Image 3 Header</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+									</div>
+									<div class="images-caption-trans">&nbsp;</div>
+									
+
+								</div>
+								<img src="images/image-01.jpg" title="dummy image 3" alt="dummy image" />
+								
+							</li>
+							<li id="carousel-item-12">
+								<div class="galleryCarousel-images-caption">
+									
+									<div class="images-caption-content">
+										
+										<h3>Image 4 Header</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+									</div>
+									<div class="images-caption-trans">&nbsp;</div>
+									
+
+								</div>
+								<img src="images/image-02.jpg" title="dummy image 4" alt="dummy image" />
+								
+							</li>
+							<li id="carousel-item-13">
+								<div class="galleryCarousel-images-caption">
+									
+									<div class="images-caption-content">
+										
+										<h3>Image 5 Header</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+									</div>
+									<div class="images-caption-trans">&nbsp;</div>
+									
+
+								</div>
+								<img src="images/image-01.jpg" title="dummy image 5" alt="dummy image" />
+								
+							</li>
+							<li id="carousel-item-14">
+								<div class="galleryCarousel-images-caption">
+									
+									<div class="images-caption-content">
+										
+										<h3>Image 6 Header</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+									</div>
+									<div class="images-caption-trans">&nbsp;</div>
+									
+
+								</div>
+								<img src="images/image-02.jpg" title="dummy image 6" alt="dummy image" />
+								
+							</li>
+							<li id="carousel-item-15">
+								<div class="galleryCarousel-images-caption">
+									
+									<div class="images-caption-content">
+										
+										<h3>Image 7 Header</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+									</div>
+									<div class="images-caption-trans">&nbsp;</div>
+									
+
+								</div>
+								<img src="images/image-01.jpg" title="dummy image 7" alt="dummy image" />
+								
+							</li>
+							<li id="carousel-item-16">
+								<div class="galleryCarousel-images-caption">
+									
+									<div class="images-caption-content">
+										
+										<h3>Image 8 Header</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+									</div>
+									<div class="images-caption-trans">&nbsp;</div>
+									
+
+								</div>
+								<img src="images/image-01.jpg" title="dummy image 8" alt="dummy image" />
+								
+							</li>
+							<li id="carousel-item-17">
+								<div class="galleryCarousel-images-caption">
+									
+									<div class="images-caption-content">
+										
+										<h3>Image 8 Header</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+									</div>
+									<div class="images-caption-trans">&nbsp;</div>
+									
+
+								</div>
+								<img src="images/image-01.jpg" title="dummy image 8" alt="dummy image" />
+								
+							</li>
+							<li id="carousel-item-18">
+								<div class="galleryCarousel-images-caption">
+									
+									<div class="images-caption-content">
+										
+										<h3>Image 8 Header</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+									</div>
+									<div class="images-caption-trans">&nbsp;</div>
+									
+
+								</div>
+								<img src="images/image-01.jpg" title="dummy image 8" alt="dummy image" />
+								
+							</li>
+						</ul>
+						
+					
+						<a href="none" class="gallery-prev-image gallery-prev-image-disabled">Previous Image</a>
+						<a href="none" class="gallery-next-image">Next Image</a>
+						
+					</div>
+					
+					<div class="carousel-wrapper cc">
+						<ul class="galleryCarousel-scroller">
+							<li class="scroller-image-selected">
+								<a class="carousel-item-link" href="#carousel-item-1" ><img src="tn/tn-01.jpg" title="view image 1" alt="view image 1" /></a>
+								<span class="scroller-overLay"></span>
+							</li>
+							<li>
+								<a class="carousel-item-link" href="#carousel-item-2" ><img src="tn/tn-04.jpg" title="view image 2"  alt="view image 2" /></a>
+								<span class="scroller-overLay"></span>
+							</li>
+							<li>
+								<a class="carousel-item-link" href="#carousel-item-3" ><img src="tn/tn-01.jpg" title="view image 3"  alt="view image 3" /></a>
+								<span class="scroller-overLay"></span>
+							</li>
+							<li>
+								<a class="carousel-item-link" href="#carousel-item-4" ><img src="tn/tn-04.jpg" title="view image 4"  alt="view image 4" /></a>
+								<span class="scroller-overLay"></span>
+							</li>
+							<li>
+								<a class="carousel-item-link" href="#carousel-item-5" ><img src="tn/tn-01.jpg" title="view image 5"  alt="view image 5" /></a>
+								<span class="scroller-overLay"></span>
+							</li>
+							<li>
+								<a class="carousel-item-link" href="#carousel-item-6"><img src="tn/tn-04.jpg" title="view image 6"  alt="view image 6" /></a>
+								<span class="scroller-overLay"></span>
+							</li>
+							<li>
+								<a class="carousel-item-link" href="#carousel-item-7"><img src="tn/tn-01.jpg" title="view image 7"  alt="view image 8" /></a>
+								<span class="scroller-overLay"></span>
+							</li>
+							<li>
+								<a class="carousel-item-link" href="#carousel-item-8"><img src="tn/tn-04.jpg" title="view image 8"  alt="view image 8" /></a>
+								<span class="scroller-overLay"></span>
+							</li>
+							<li class="scroller-image-selected">
+								<a class="carousel-item-link" href="#carousel-item-9" ><img src="tn/tn-01.jpg" title="view image 1" alt="view image 1" /></a>
+								<span class="scroller-overLay"></span>
+							</li>
+							<li>
+								<a class="carousel-item-link" href="#carousel-item-10" ><img src="tn/tn-04.jpg" title="view image 2"  alt="view image 2" /></a>
+								<span class="scroller-overLay"></span>
+							</li>
+							<li>
+								<a class="carousel-item-link" href="#carousel-item-11" ><img src="tn/tn-01.jpg" title="view image 3"  alt="view image 3" /></a>
+								<span class="scroller-overLay"></span>
+							</li>
+							<li>
+								<a class="carousel-item-link" href="#carousel-item-12" ><img src="tn/tn-04.jpg" title="view image 4"  alt="view image 4" /></a>
+								<span class="scroller-overLay"></span>
+							</li>
+							<li>
+								<a class="carousel-item-link" href="#carousel-item-13" ><img src="tn/tn-01.jpg" title="view image 5"  alt="view image 5" /></a>
+								<span class="scroller-overLay"></span>
+							</li>
+							<li>
+								<a class="carousel-item-link" href="#carousel-item-14"><img src="tn/tn-04.jpg" title="view image 6"  alt="view image 6" /></a>
+								<span class="scroller-overLay"></span>
+							</li>
+							<li>
+								<a class="carousel-item-link" href="#carousel-item-15"><img src="tn/tn-01.jpg" title="view image 7"  alt="view image 8" /></a>
+								<span class="scroller-overLay"></span>
+							</li>
+							<li>
+								<a class="carousel-item-link" href="#carousel-item-16"><img src="tn/tn-04.jpg" title="view image 8"  alt="view image 8" /></a>
+								<span class="scroller-overLay"></span>
+							</li>
+							<li>
+								<a class="carousel-item-link" href="#carousel-item-17"><img src="tn/tn-01.jpg" title="view image 7"  alt="view image 8" /></a>
+								<span class="scroller-overLay"></span>
+							</li>
+							<li>
+								<a class="carousel-item-link" href="#carousel-item-18"><img src="tn/tn-04.jpg" title="view image 8"  alt="view image 8" /></a>
+								<span class="scroller-overLay"></span>
+							</li>
+						</ul>
+						
+					</div>
+				</div>
+			<div style="clear:both;">
+			
+				<p>other content</p>
+				<p>other content</p>
+				<p>other content</p>
+				<p>other content</p>
+			</div>
+			<h2 class="visuallyhidden">Gallery 2</h2>
+			
+			
+			<div class="docs">
+				
+				<h2>
+					Gallery Carousel options and their defaults.
+				</h2>
+				<h3>Requirements:</h3>
+					<ul>
+						<li>
+							jQuery v1.5.2 or later: <a href="http://docs.jquery.com/Downloading_jQuery#Download_jQuery">http://docs.jquery.com/Downloading_jQuery#Download_jQuery</a>
+							
+						</li>
+						<li>
+							jQuery cycle plugin: <a href="https://raw.github.com/malsup/cycle/master/jquery.cycle.all.js">https://raw.github.com/malsup/cycle/master/jquery.cycle.all.js</a>
+							
+						</li>
+						<li>
+							jQuery jCarousel: <a href="http://sorgalla.com/jcarousel">http://sorgalla.com/jcarousel</a>
+							
+						</li>
+					</ul>
+					
+				<h3>
+					Usage:
+				</h3>
+				<p>
+					Initiate the plugin with the call below and use the markup in this demo. 
+					Any cycle plugin options can be passed using the options parameter: 'cycleSettings: {}'.
+					Available <a href="http://jquery.malsup.com/cycle/options.html">jQuery cycle options</a>.
+					Available<a href="http://jquery.malsup.com/cycle/browser.html"> jQuery cycle fx options</a>.
+				</p>
+				
+				<pre>
+$(function(){
+	$('#targetElement').galleryCarousel({});
+});
+				</pre>
+				<h3>Options:</h3>
+				<pre>
+					
+{
+	activeItemClass: 'scroller-image-selected',
+	height: 280,
+	width:null,
+	auto:false,
+	cycleSettings: {}
+}
+					
+				</pre>
+				
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

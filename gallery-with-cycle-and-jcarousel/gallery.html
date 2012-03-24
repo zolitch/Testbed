@@ -1,0 +1,471 @@
+<!doctype html>
+<html>
+<head>
+    <title>Page Title</title>
+    
+	<style type="text/css">
+	/*
+	Styling for the carousel gallery
+*/
+.gallery-carousel .jcarousel-container{
+	width:100%;
+	background:#000;
+	height:54px;
+	padding:3px 0;
+}
+	.gallery-carousel ul{
+		padding:0;
+		margin:0;
+	}
+	.gallery-carousel li{
+		list-style:none;
+	}
+	
+	/*The image gallery*/
+	.gallery-carousel-images{
+		position:relative;
+	}
+		.gallery-carousel-images ul{
+			 height:288px; overflow:hidden;
+		}
+		.no-js .gallery-carousel-images ul{
+			overflow-y:scroll;
+		}
+			.gallery-carousel-images ul li{
+				height:100%; width:100%;
+			}
+				.gallery-carousel-images ul li img{
+					position:absolute; top:0; left:0;
+				}
+				.gallery-carousel-images-caption{
+					position:absolute;
+					left:0; bottom:0;
+					overflow:hidden;
+					width: 100%;
+					z-index:2;
+					height:0;
+				}
+					.images-caption-content{
+						padding:8px; color:#fff;
+						position:relative;
+						z-index:2;
+					}
+					.images-caption-trans{
+						opacity: .65;
+						filter: alpha(opacity=65);
+						background:#000;
+						height:500px;
+						position:absolute; top:0; left:0;
+						z-index:1; width:100%;
+					}
+						.images-caption-content h3{
+							font-size:1.12em;
+						}
+						.images-caption-content p{
+							margin:0;
+						}
+						
+		.gallery-next-image,
+		.gallery-prev-image{
+			background: url(/images/sprites.png) no-repeat transparent;
+			height:50px; width:28px;
+			position:absolute;
+			top:108px;
+			z-index:100;
+			background-color:transparent !important;
+		}
+		.no-js .gallery-next-image,
+		.no-js .gallery-prev-image{
+			display:none;
+		}
+	/*The thumbnail scroller*/
+	.gallery-carousel .jcarousel-clip{
+		width:420px;
+	}
+		.gallery-carousel .gallery-carousel-scroller{
+		}
+
+			.gallery-carousel .gallery-carousel-scroller li{
+				width:82px; height:54px; float:left; position:relative;
+				margin:0 1px; display:block;
+			}.gallery-carousel .jcarousel-container  li span{
+				display:none; width:79px; height:50px; display:none;
+				position:absolute; border:2px solid #fcd900; top:0; left:0;
+			}
+			.gallery-carousel .jcarousel-container  li.scroller-image-selected span{
+				display:block;
+			}
+			.gallery-carousel .gallery-carousel-scroller a{
+				background-color: transparent !important;
+					opacity: .50;
+					filter: alpha(opacity=50);
+			}
+			.no-js .gallery-carousel .gallery-carousel-scroller a{
+				opacity: 1;
+				filter: alpha(opacity=100);
+			}
+			.gallery-carousel .jcarousel-container a:hover,
+			.gallery-carousel .jcarousel-container  li.scroller-image-selected a{
+					opacity: 1; /* Standard: FF gt 1.5, Opera, Safari */
+					filter: alpha(opacity=100); /* IE lt 8 */
+					-ms-filter: "alpha(opacity=100)"; /* IE 8 */
+					background-color:transparent !important;
+			}
+	
+	
+	.gallery-carousel .jcarousel-next,
+	.gallery-carousel .jcarousel-prev{
+		background: url(/images/sprites.png);
+		border: 0 none;
+		display: none;
+		height: 54px;
+		position: absolute;
+		top: 3px;
+		width: 21px;
+		z-index: 3;
+		cursor:pointer;
+	}
+	.ie6 .gallery-carousel .jcarousel-next{
+		background: url(/images/sprites.gif);
+	}
+	.gallery-carousel .jcarousel-next{
+		right:0;
+	}
+	.gallery-carousel .jcarousel-prev{
+		left:0;
+	}
+	
+	
+	
+/*Individualy styled elements for different carousel styles*/
+/*Yellow themed carousel*/
+
+	.gallery-carouselTyellow .gallery-next-image{ right:0; background-position: 0 -100px;}
+	.gallery-carouselTyellow .gallery-next-image-disabled{ background-position: 0 -100px !important; cursor:default;}
+	.gallery-carouselTyellow .gallery-next-image:hover{ background-position: -50px -100px;}
+	.gallery-carouselTyellow .gallery-prev-image{ left:0; background-position: 0 -50px;}
+	.gallery-carouselTyellow .gallery-prev-image-disabled{ background-position: 0 -50px !important; cursor:default;}
+	.gallery-carouselTyellow .gallery-prev-image:hover{ background-position: -50px -50px;}
+	.gallery-carouselTyellow  .jcarousel-prev{
+		background-position:-100px -0;
+	}
+	.gallery-carouselTyellow .jcarousel-prev:hover{
+		background-position:-150px -0;
+	}
+	.gallery-carouselTyellow .jcarousel-prev-disabled{
+		background-position:-100px -0 !important;  cursor:default;
+	}
+	.gallery-carouselTyellow .jcarousel-next{
+		background-position:-100px -100px;
+	}
+	.gallery-carouselTyellow .jcarousel-next:hover{
+		background-position:-150px -100px;
+	}
+	.gallery-carouselTyellow .jcarousel-next-disabled{
+		background-position:-100px -100px !important;  cursor:default;
+	}
+		
+	</style>
+    <script src="../js/jquery-1.4.2.min.js" type="text/javascript"></script> 
+    <script src="../js/jquery.jcarousel.js" type="text/javascript"></script> 
+	
+</head>
+<body>
+
+			<div id="mediaspace">
+				<section>
+					<h2 class="visuallyhidden">Gallery</h2>
+					<div class="gallery-carousel gallery-carouselTyellow">
+						<div class="gallery-carousel-images">
+							<ul class="gallery-carousel-cycle">
+								<li id="carousel-item-1" >
+									
+									<div class="gallery-carousel-images-caption">
+										
+										<div class="images-caption-content">
+											
+											<h3>Image 1 Header</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+										</div>
+										<div class="images-caption-trans">&nbsp;</div>
+										
+
+									</div>
+									<img src="cms-content/gallery-carousel/images/dummy-image-01.jpg" title="dummy image 1" alt="dummy image" />
+									
+								</li>
+								
+								<li id="carousel-item-2">
+									<div class="gallery-carousel-images-caption">
+										
+										<div class="images-caption-content">
+											
+											<h3>Image 2 Header</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+										</div>
+										<div class="images-caption-trans">&nbsp;</div>
+										
+
+									</div>
+									<img src="cms-content/gallery-carousel/images/dummy-image-01.jpg" title="dummy image 2" alt="dummy image" />
+									
+								</li>
+								<li id="carousel-item-3">
+									<div class="gallery-carousel-images-caption">
+										
+										<div class="images-caption-content">
+											
+											<h3>Image 3 Header</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+										</div>
+										<div class="images-caption-trans">&nbsp;</div>
+										
+
+									</div>
+									<img src="cms-content/gallery-carousel/images/dummy-image-01.jpg" title="dummy image 3" alt="dummy image" />
+									
+								</li>
+								<li id="carousel-item-4">
+									<div class="gallery-carousel-images-caption">
+										
+										<div class="images-caption-content">
+											
+											<h3>Image 4 Header</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+										</div>
+										<div class="images-caption-trans">&nbsp;</div>
+										
+
+									</div>
+									<img src="cms-content/gallery-carousel/images/dummy-image-01.jpg" title="dummy image 4" alt="dummy image" />
+									
+								</li>
+								<li id="carousel-item-5">
+									<div class="gallery-carousel-images-caption">
+										
+										<div class="images-caption-content">
+											
+											<h3>Image 5 Header</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+										</div>
+										<div class="images-caption-trans">&nbsp;</div>
+										
+
+									</div>
+									<img src="cms-content/gallery-carousel/images/dummy-image-01.jpg" title="dummy image 5" alt="dummy image" />
+									
+								</li>
+								<li id="carousel-item-6">
+									<div class="gallery-carousel-images-caption">
+										
+										<div class="images-caption-content">
+											
+											<h3>Image 6 Header</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+										</div>
+										<div class="images-caption-trans">&nbsp;</div>
+										
+
+									</div>
+									<img src="cms-content/gallery-carousel/images/dummy-image-01.jpg" title="dummy image 6" alt="dummy image" />
+									
+								</li>
+								<li id="carousel-item-7">
+									<div class="gallery-carousel-images-caption">
+										
+										<div class="images-caption-content">
+											
+											<h3>Image 7 Header</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+										</div>
+										<div class="images-caption-trans">&nbsp;</div>
+										
+
+									</div>
+									<img src="cms-content/gallery-carousel/images/dummy-image-01.jpg" title="dummy image 7" alt="dummy image" />
+									
+								</li>
+								<li id="carousel-item-8">
+									<div class="gallery-carousel-images-caption">
+										
+										<div class="images-caption-content">
+											
+											<h3>Image 8 Header</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+										</div>
+										<div class="images-caption-trans">&nbsp;</div>
+										
+
+									</div>
+									<img src="cms-content/gallery-carousel/images/dummy-image-01.jpg" title="dummy image 8" alt="dummy image" />
+									
+								</li>
+							</ul>
+							
+						
+							<a href="none" class="gallery-prev-image gallery-prev-image-disabled ir">Previous Image</a>
+							<a href="none" class="gallery-next-image ir">Next Image</a>
+							
+						</div>
+						
+						<div class="carousel-wrapper">
+							<ul class="gallery-carousel-scroller">
+								<li class="scroller-image-selected">
+									<a class="carousel-item-link" href="#carousel-item-1" ><img src="/cms-content/gallery-carousel/tn/tn-01.jpg" title="view image 1" alt="view image 1" /></a>
+									<span class="scroller-overLay"></span>
+								</li>
+								<li>
+									<a class="carousel-item-link" href="#carousel-item-2" ><img src="/cms-content/gallery-carousel/tn/tn-04.jpg" title="view image 2"  alt="view image 2" /></a>
+									<span class="scroller-overLay"></span>
+								</li>
+								<li>
+									<a class="carousel-item-link" href="#carousel-item-3" ><img src="/cms-content/gallery-carousel/tn/tn-01.jpg" title="view image 3"  alt="view image 3" /></a>
+									<span class="scroller-overLay"></span>
+								</li>
+								<li>
+									<a class="carousel-item-link" href="#carousel-item-4" ><img src="/cms-content/gallery-carousel/tn/tn-04.jpg" title="view image 4"  alt="view image 4" /></a>
+									<span class="scroller-overLay"></span>
+								</li>
+								<li>
+									<a class="carousel-item-link" href="#carousel-item-5" ><img src="/cms-content/gallery-carousel/tn/tn-01.jpg" title="view image 5"  alt="view image 5" /></a>
+									<span class="scroller-overLay"></span>
+								</li>
+								<li>
+									<a class="carousel-item-link" href="#carousel-item-6"><img src="/cms-content/gallery-carousel/tn/tn-04.jpg" title="view image 6"  alt="view image 6" /></a>
+									<span class="scroller-overLay"></span>
+								</li>
+								<li>
+									<a class="carousel-item-link" href="#carousel-item-7"><img src="/cms-content/gallery-carousel/tn/tn-01.jpg" title="view image 7"  alt="view image 8" /></a>
+									<span class="scroller-overLay"></span>
+								</li>
+								<li>
+									<a class="carousel-item-link" href="#carousel-item-8"><img src="/cms-content/gallery-carousel/tn/tn-04.jpg" title="view image 8"  alt="view image 8" /></a>
+									<span class="scroller-overLay"></span>
+								</li>
+							</ul>
+							
+						</div>
+					</div>
+				</section>
+			
+			</div>
+			<script type="text/javascript">
+	
+	/*global window, jQuery */
+(function ($j) {
+
+	var $imageWrapper,
+		$carousel,
+		$currentSlide,
+		$carouselItem,
+		ACTIVEITEMCLASS = 'scroller-image-selected',
+		totalSlides,
+		$carouselScroller,
+		FADESPEED = 1000,
+		SLIDESPEED = 500;
+	
+	
+	window.galleryCarousel = {
+		init: function () {
+			initialiseGallery();
+			
+			$j('.carousel-item-link').click(function(){
+				var href = $j(this).attr('href');
+					href = href.replace(/\#/g, ''); //replace one or more hash tags passed in the href.
+					activateSlide($j(this).parent());
+					showSlide(href);
+					return false;
+			});
+        }
+	};
+	
+	
+	var showContent = function(elementID){
+		var $elem = $j('#' + elementID),
+		//show the content. Animate the height based on the height of the inner div
+			hgt = $elem.children().children('.images-caption-content').outerHeight();
+		
+		$elem.children('.gallery-carousel-images-caption').stop(true,true).animate({height: hgt}, SLIDESPEED);
+	}, 
+	hideContent = function(elementID){
+		var $elem = $j('#' + elementID);
+		//hide the content
+		//$elem.children('.gallery-carousel-images-caption').fadeOut('slow');
+		$elem.children('.gallery-carousel-images-caption').stop(true,false).animate({height: 0}, SLIDESPEED);
+	},
+	carousel_initCallback = function(carousel) {
+		$j('.gallery-next-image').bind('click', function() {
+			if (!($j(this).hasClass('gallery-next-image-disabled'))){
+				showSlide($currentSlide.next().attr('id'));
+				carousel.scroll($j.jcarousel.intval($currentSlide.index()));
+				$j('.jcarousel-item').each(function(){
+					if ($j(this).index() === $currentSlide.index()){
+						activateSlide($j(this));
+					}
+				});
+			}
+			return false;
+		});
+		$j('.gallery-prev-image').bind('click', function() {
+			if (!($j(this).hasClass('gallery-prev-image-disabled'))){
+				showSlide($currentSlide.prev().attr('id'));
+				carousel.scroll($j.jcarousel.intval($currentSlide.index()));
+				$j('.jcarousel-item').each(function(){
+					if ($j(this).index() === $currentSlide.index()){
+						activateSlide($j(this));
+					}
+				});
+			}
+			return false;
+		});
+	},
+
+	initialiseGallery = function(){
+	
+		//assign initial variables
+		$imageWrapper = $j('.gallery-carousel-cycle');
+		$carousel = $j('.carousel-wrapper');
+		$currentSlide = $imageWrapper.children('li:first-child');
+		$carouselItem = $j('.jcarousel-item a');
+		totalSlides = ($imageWrapper.children().size() - 1); //-1 to account for the zero index
+		$carouselScroller = $j('.gallery-carousel-scroller');
+		//initialise the jcarousel
+		$j('.carousel-wrapper').jcarousel({
+			auto: 0,
+			scroll:5,
+			initCallback: carousel_initCallback
+		});
+		//initialise the cycle
+		$imageWrapper.cycle({
+			fx:'fade',
+			speed: FADESPEED,
+			before: function(currSlideElement, nextSlideElement, options, forwardFlag) {
+				hideContent(currSlideElement.id);
+			},
+			after: function(currSlideElement, nextSlideElement, options, forwardFlag)  {
+				showContent(nextSlideElement.id);
+			}
+		});
+		$imageWrapper.cycle('pause');
+	},
+	showSlide = function(elemId){
+		var $slide = $j('#' + elemId),
+			slideIndex = $slide.index();
+		$imageWrapper.cycle(slideIndex);
+		$currentSlide = $slide;
+		// de-activate the next button
+		slideIndex >= totalSlides ? $j('.gallery-next-image').addClass('gallery-next-image-disabled') : $j('.gallery-next-image').removeClass('gallery-next-image-disabled');
+		// de-activate the prev button
+		slideIndex <= 0 ? $j('.gallery-prev-image').addClass('gallery-prev-image-disabled') : $j('.gallery-prev-image').removeClass('gallery-prev-image-disabled');
+	},
+	activateSlide = function($elem){
+		$elem.siblings().removeClass(ACTIVEITEMCLASS);
+		$elem.addClass(ACTIVEITEMCLASS);
+	};
+	
+} (jQuery));
+
+	</script>
+	
+</body>
+</html>

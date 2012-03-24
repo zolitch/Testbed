@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+<head>
+	<style type="text/css">
+		/*
+	mod-form 
+*****************************************************************/
+.mod-form{
+	margin-left:-145px; position:relative;
+}
+	.mod-form-notice{
+		font-family:nimbusregular, Arial, Helvetica, "Nimbus Sans L", "Free Sans", Sans-Serif;
+		font-size:1.167em; line-height:1.143;
+		position:absolute; top:-38px; right:8px;
+	}
+	.mod-form-notice span {color:#4e85f6}
+	.mod-form .field-item{float:left; width:100%; padding:9px 0;}
+		.mod-form .field-item label.label-text{ 
+			font-weight:bold; width:128px; display:block; float:left;
+			padding-left:16px;
+		}
+			.mod-form .field-item label.label-text .required{color:#4e85f6}
+ 
+		.mod-form .field-item input{float:left; width:226px;}
+		.mod-form .field-itemTsmall input{width:60px;}
+		.mod-form .field-item textarea{float:left; width:226px;}
+		.mod-form .field-item select{float:left; width:109px;}
+		
+	.mod-form  .field-checkItems{ }
+		.mod-form  .field-checkItems li.field-item {background:none; width:45%; }
+			.mod-form  .field-checkItems .field-item input{width:16px; margin-left:16px;}
+			.mod-form  .field-checkItems  li.field-item label {width:75%; }
+			.ie8 .mod-form  .field-checkItems  li.field-item label,
+			.ie9 .mod-form  .field-checkItems  li.field-item label {padding-top:2px;}
+			.mod-form  .field-checkItemsTwide{ padding-top:16px; border-top:1px solid #cdcdcd; }
+		.mod-form  .field-checkItemsTwide  li.field-itemTleft {width:70%; float:left;}
+		.mod-form  .field-checkItemsTwide  li.field-itemTsubmit {width:15%; float:right;}
+			
+	.mod-form .field-itemTerror{}
+	.mod-form .field-itemTerror .label-text {
+		color: #4e85f6;
+	}
+	.mod-form .field-itemTerror input[type=text] {
+		border:1px solid #4e85f6;
+		color: #4e85f6;
+	}
+	.mod-form .field-itemTerror select {
+		color: #4e85f6;
+	}
+	.mod-form .field-itemTerror textarea {
+		color: #4e85f6;
+	}
+		.mod-form .label-error-msg{display:none;}
+		.mod-form .label-error-msgThidden { display: none !important; }
+		.mod-form .field-itemTerror .label-error-msg{
+			background:url(../../images/sprites.png) no-repeat -300px -200px transparent;
+			display:block; float:left; margin:2px 0 0 16px;
+			color:#fff;
+		}
+		.ie6 .mod-form .field-itemTerror .label-error-msg{background-image:url(../../images/sprites.gif);}
+		.mod-form .field-itemTerror .label-error-msg span{
+			 padding:1px 8px 2px 8px; max-width:150px; margin-left:11px; background-color:#4e85f6; float:left;
+		}
+		
+	.mod-form button{
+		float:right;
+	}
+	</style>
+	
+    <title>Page Title</title>
+</head>
+<body>
+    <div class="mod-form cc">
+		<p class="mod-form-notice">
+			<span>* </span> denotes a required field
+		</p>
+		
+		<div class="field-item">
+			<label for="txtEmail" class="label-text">
+				Email <abbr class="required" title="required">*</abbr>
+			</label>
+			<input id="txtEmail" type="text" />
+			<label for="txtEmail" class="label-error-msg"><span>This is a required field</span></label>
+		</div>
+		
+		<div class="field-item">
+			<label class="label-text">Title</label>
+			<select>
+				<option value=""></option>
+				<option value="">Mr</option>
+				<option value="">Ms</option>
+				<option value="">Miss</option>
+				<option value="">Mrs</option>
+			</select>
+		</div>
+		
+		<div class="field-item">
+			<label for="txtFName" class="label-text">
+				First Name <abbr class="required" title="required">*</abbr>
+			</label>
+			<input id="txtFName" type="text" class="required" />
+			<label for="txtFName" class="label-error-msg"><span>This is a required field</span></label>
+		</div>
+		
+		<div class="field-item">
+			<label for="txtLName" class="label-text">
+				Last Name <abbr class="required" title="required">*</abbr>
+			</label>
+			<input id="txtLName" type="text" />
+			<label for="txtLName" class="label-error-msg"><span>This is a required field</span></label>
+		</div>
+		
+		<div class="field-item">
+			<label for="txtCompany" class="label-text">
+				Company <abbr class="required" title="required">*</abbr>
+			</label>
+			<input id="txtCompany" type="text" />
+			<label for="txtCompany" class="label-error-msg"><span>This is a required field</span></label>
+		</div>
+		
+		<div class="field-item">
+			<label for="txtAddress1" class="label-text">
+				Address 1 <abbr class="required" title="required">*</abbr>
+			</label>
+			<input id="txtAddress1" type="text" />
+		</div>
+		
+		<div class="field-item">
+			<label for="txtAddress2" class="label-text">
+				Address 2
+			</label>
+			<input id="txtAddress2" type="text" />
+		</div>
+		
+		<div class="field-item">
+			<label for="txtCity" class="label-text">
+				City
+			</label>
+			<input id="txtCity" type="text" />
+		</div>
+		
+		<div class="field-item">
+			<label for="txtCounty" class="label-text">
+				County
+			</label>
+			<input id="txtCounty" type="text" /> 		
+		</div>
+		
+		<div class="field-item field-itemTsmall">
+			<label for="txtPostcode" class="label-text">
+				Postcode
+			</label>
+			<input id="txtPostcode" type="text" /> 
+			<label for="txtPostcode" class="label-error-msg"><span>Please enter a valid postcode</span></label>		
+		</div>
+		
+		<div class="field-item">
+			<label for="txtLName" class="label-text">
+				Telephone <abbr class="required" title="required">*</abbr>
+			</label>
+			<input id="txtLName" type="text" />
+			<label for="txtLName" class="label-error-msg"><span>Please enter a valid telephone number</span></label>
+		</div>
+	</div>
+	
+	<h2>Your Preferences</h2>
+	
+	<div class="mod-form cc">
+		<ul class="field-checkItems cc">
+			<li class="field-item">
+				<input type="checkbox" id="chkNewsAlerts" name="surname" />
+				<label for="chkNewsAlerts" class="label-text">News alerts</label>
+			</li>
+			<li class="field-item">
+				<input type="checkbox" id="chkMonthlyIndex" name="surname" />
+				<label for="chkMonthlyIndex" class="label-text">Monthly index rebalance</label>
+			</li>
+			<li class="field-item">
+				<input type="checkbox" id="chkeMTX" name="surname" />
+				<label for="chkeMTX" class="label-text">eMTX</label>
+			</li>
+			<li class="field-item">
+				<input type="checkbox" id="chkMonthlyNews" name="surname" />
+				<label for="chkMonthlyNews" class="label-text">Monthly news summary</label>
+			</li>
+		</ul>
+		<ul class="field-checkItems field-checkItemsTwide cc">
+			<li class="field-item field-itemTleft">
+				<input type="checkbox" id="chkTerms" name="surname" />
+				<label for="chkTerms" class="label-text">have read and agree to the <a href="none">Terms and Conditions</a>.</label>
+			</li>
+			<li class="field-item field-itemTsubmit">
+				<button class="button"><span class="btn-l"></span><span>Submit</span></button>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

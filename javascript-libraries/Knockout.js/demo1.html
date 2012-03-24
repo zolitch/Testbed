@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+	<style type="text/css">
+	.module {padding:20px; border:red; float:left; width:300px;}
+	</style>
+	
+    <script src="../js/jquery.1.6.js"></script>
+    <script src="../js/jquery.tmpl.js"></script>
+    <script src="js/knockout.min.js"></script>
+	
+	
+	
+    <title>Knockout test</title>
+</head>
+<body>
+    <div class="module">
+		<p>
+			<span data-bind="text: firstName"></span>
+		</p>
+		<p>
+			<input data-bind="value: firstName" />
+		</p>
+		<p>
+			<span data-bind="text: lastName"></span>
+		</p>
+		<p>
+			<input data-bind="value: lastName" />
+		</p>
+		
+	</div>
+    <div class="module">
+		<p>
+			<span data-bind="text: fullName"></span>
+		</p>
+		
+	</div>
+	<br />
+    <div style="clear:both">
+		<h2>Friends <span data-bind="text: friends().length"></span></h2>
+		<!--
+		<div data-bind="template: 'friendsTemplate'"></div>
+		
+		<script id="friendsTemplate" type="text/html">
+			<ul>
+				{{each(index, friend) friends}}
+					<li>${ friend.name } - ${ new Date } </li>
+				{{/each}}
+			</ul>
+			
+		</script>
+		-->
+		<ul data-bind="template: {name:'friendsTemplate', foreach:friends}"></ul>
+		
+		<script id="friendsTemplate" type="text/html">
+					<li>
+						<input type="text" data-bind="value: name" />
+						
+						<button data-bind="click: remove">Remove</button>
+						
+						<label><input type="checkbox" data-bind="value: isOnTwitter" /> Is On Twitter </label>
+						
+						<input type="text" data-bind="value: twitterName, visible: isOnTwitter" />
+						
+					</li>
+		</script>
+		<input type="text" name="newFriend" id="newFriend" />
+		
+		<button data-bind="click: addFriend, enable: friends().length < 5">Add Friend</button>
+		
+		
+		
+	</div>
+    <div class="module">
+	</div>
+	<script type="text/javascript">
+
+			
+			function friend(name){
+				return {
+					name : ko.observable(name),
+					isOnTwitter : ko.observable(false),
+					twitterName : ko.observable(),
+					remove : function(){
+						viewModel.friends.remove(this);
+					}
+				};
+			}
+		
+		
+			var viewModel = {
+				firstName : ko.observable("Eric"),
+				lastName : ko.observable("Bana"),
+				friends : ko.observableArray([new friend("steve"), new friend("annie")]),
+				addFriend : function (){
+					this.friends.push(new friend('friend name'));
+				},
+				save : function(){
+					$.ajax({
+						url: "@UrlAction('Save')",
+						type : 'post',
+						data: ko.toJSON(this),
+						contentType : 'application/json',
+						success : function (result) {alert(result.message)}
+					});
+				}
+			};
+			viewModel.fullName = ko.dependentObservable(function (){
+				return this.firstName() + " " + this.lastName();
+			}, viewModel);
+			
+			
+			ko.applyBindings(viewModel);
+	</script>
+</body>
+</html>

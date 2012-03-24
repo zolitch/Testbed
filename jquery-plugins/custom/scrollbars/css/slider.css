@@ -1,0 +1,33 @@
+body, html{maring:0; padding:0;}
+body{
+	font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+	font-size:75%;
+	color:#a0a0a0;
+}
+.container{padding:30px;}
+	.scrollBars{width:400px; height:400px; overflow:auto; position:relative;}
+		.scrollBars .sliderWrap{
+			background-color: #313131;
+			position:absolute;
+			right: 6px; top:0;
+			height:90%;
+			margin-top:20px;
+			width: 2px;
+			overflow:visible;
+		}
+			.scrollBars .slider{
+				background: transparent;
+				position:relative;
+			}
+				.scrollBars .slider .ui-slider-handle{
+					-moz-transition: none 0s ease 0s;
+					background: #555555;
+					webkit-border-radius: 3px 3px 3px 3px;
+					moz-border-radius: 3px 3px 3px 3px;
+					border-radius: 3px 3px 3px 3px;
+					display: block;
+					left: -2px;
+					margin: 0 auto;
+					position: absolute;
+					width: 6px;
+				}

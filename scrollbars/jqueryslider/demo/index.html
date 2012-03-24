@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>Vertical scrollbar with jQuery UI</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+
+<style type="text/css">
+body{font-family:Arial, Helvetica, sans-serif;color:#666666;min-width:600px}
+h1{margin:20px}
+p#return{clear:left;margin-left:50px;margin-top:30px}
+a:active, a:focus{outline:none}
+/* css for scrollbar below here*/
+#scroll-pane { float:left;overflow: auto; width: 420px; height:500px;position:relative;border:1px solid gray;margin-left:50px;margin-bottom:25px;display:inline}
+#scroll-content {position:absolute;top:0;left:0}
+.scroll-content-item {background-color:#fcfcfc;color:#003366;width:100px;height:100px;float:left;margin:10px;font-size:3em;line-height:96px;text-align:center;border:1px solid gray;display:inline;}
+#slider-wrap{float:left;background-color:lightgrey;width:20px;border:1px solid gray;border-left:none;}
+#slider-vertical{position:relative;height:100%}
+.ui-slider-handle{width:20px;height:10px;margin:0 auto;background-color:darkgray;display:block;position:absolute}
+input{font-size:12px}
+</style>
+</head>
+
+<body>
+
+<script type="text/javascript" src="javascript/vertical.slider.js"></script>
+
+
+<h1>Vertical scrollbar with jQuery UI</h1>
+
+<div id="scroll-pane">
+	<div id="scroll-content">
+		<div class="scroll-content-item">1</div>
+		<div class="scroll-content-item ">2</div>
+
+		<div class="scroll-content-item ">3</div>
+		<div class="scroll-content-item ">4</div>
+		<div class="scroll-content-item ">5</div>
+		<div class="scroll-content-item ">6</div>
+		<div class="scroll-content-item ">7</div>
+		<div class="scroll-content-item " id="test8">8</div>
+
+		<div class="scroll-content-item ">9</div>
+		<div class="scroll-content-item ">10</div>
+		<div class="scroll-content-item ">11</div>
+		<div class="scroll-content-item ">12</div>
+		<div class="scroll-content-item ">13</div>
+		<div class="scroll-content-item ">14</div>
+
+		<div class="scroll-content-item ">15</div>
+		<div class="scroll-content-item ">16</div>
+		<div class="scroll-content-item ">17</div>
+		<div class="scroll-content-item ">18</div>
+		<div class="scroll-content-item ">19</div>
+		<div class="scroll-content-item ">20</div>
+
+	</div>
+</div>
+
+
+<script type="text/javascript">
+</body>
+</html>

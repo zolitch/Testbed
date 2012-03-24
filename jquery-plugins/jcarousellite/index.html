@@ -1,0 +1,55 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6 no-js"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7 no-js"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+	<title>jQuery.galleryCarousel demo</title>
+    <link rel="stylesheet" href="jquery.galleryCarousel.css" type="text/css" media="screen" />
+    
+
+
+
+
+    <script src="lib/jquery-1.5.2.min.js" type="text/javascript"></script>
+    <script src="lib/jquery-plugins/jquery.jcarousellite.js" type="text/javascript"></script>
+    <script type="text/javascript">
+		
+    </script>
+  </head>
+  <body>
+	<div id="container">
+		<button class="prev"><<</button>
+<button class="next">>></button>
+        <a href="#" class="jump">jump to 3</a>
+		
+		<div class="anyClass">
+			<ul>
+				<li><img src="tn/tn-01.jpg" alt="" width="100" height="100" ></li>
+				<li><img src="tn/tn-02.jpg" alt="" width="100" height="100" ></li>
+				<li><img src="tn/tn-03.jpg" alt="" width="100" height="100" ></li>
+				<li><img src="tn/tn-04.jpg" alt="" width="100" height="100" ></li>
+				<li><img src="tn/tn-01.jpg" alt="" width="100" height="100" ></li>
+				<li><img src="tn/tn-02.jpg" alt="" width="100" height="100" ></li>
+				<li><img src="tn/tn-03.jpg" alt="" width="100" height="100" ></li>
+				<li><img src="tn/tn-04.jpg" alt="" width="100" height="100" ></li>
+			</ul>
+		</div>
+        
+	</div>
+	<script type="text/javascript">
+		$(function() {
+			$(".anyClass").jCarouselLite({
+				btnNext: ".next",
+				btnPrev: ".prev",
+				circular:false
+			});
+			$('.jump').click(function(){
+				$(".anyClass").jCarouselLite('3');
+			});
+		});
+	</script>
+	
+  </body>
+</html>

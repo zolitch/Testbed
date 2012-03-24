@@ -1,0 +1,37 @@
+
+.stepPager{
+	
+}
+	
+	.stepPager ul{
+		padding:0;
+		margin:0;
+		width:200px;
+		position:relative;
+		overflow:hidden;
+	}
+		
+		.stepPager ul li{
+			background:#aaa;
+			display:block;
+			height:50px;
+			padding:0;
+			margin:2px 0;
+			list-style:none;
+			width:100%;
+		}
+		.stepPager ul li img{
+			float:left;
+			margin-right:5px;
+		}
+	.nav-paging{
+		
+	}
+		.stepPager .nav-paging li{
+			display:inline;
+			background:none;
+			padding:0 4px;
+		}
+			.stepPager .nav-paging li a:hover{
+				text-decoration:underline;
+			}
