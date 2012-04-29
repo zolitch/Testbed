@@ -1,0 +1,92 @@
+/*
+    Lists and Navigation styles
+    - prefix: nav, list
+*/
+
+/**
+	=> Primary Navigation
+----------------------------------------*/
+#nav-primary{
+	padding:16px 16px 0;
+	display:inline-block;
+}
+	#nav-primary ul{
+		padding:0;
+		margin:0;
+	}
+		#nav-primary ul li{
+			float:left;
+			list-style:none;
+			margin-right:1px;
+			display:block;
+		}
+			#nav-primary ul li a{
+				background:#231f20;
+				display:block;
+				color:#fed615;
+				padding:8px 8px;
+				text-decoration:none;
+				width:150px;
+				font-weight:bold;
+			}
+			#nav-primary ul li a:hover{
+				background:#000;
+				display:block;
+			}
+			
+/**
+	=> Primary Navigation with Dropdown
+----------------------------------------*/
+#nav-primary .nav-primary-priLink{
+	background:none;
+	position:relative;
+}
+	#nav-primary .nav-primary-dropdown {
+		position:absolute;
+		top:30px;
+		width:150px;
+		z-index:10;
+		display:none;
+	}
+		#nav-primary .nav-primary-dropdown ul li{
+		}
+			#nav-primary .nav-primary-dropdown ul li a{
+				border-top:1px solid #fff;
+				background:#64595c;
+			}
+			#nav-primary .nav-primary-dropdown ul li a:hover{
+				background:#000;
+				display:block;
+			}
+		
+		
+			
+/**
+	=> Secondary Navigation
+----------------------------------------*/
+#nav-secondary{
+	padding:16px;
+	margin:16px;
+	width:200px;
+	background:#f5f5f5;
+}
+	#nav-secondary ul{
+		padding:16px 0;
+		margin:0;
+		width:100%;
+	}
+		#nav-secondary ul li{
+			border-top:1px solid #231f20;
+			list-style:none;
+			display:block;
+		}
+		#nav-secondary ul li:first-child{
+			border:none;
+		}
+			#nav-secondary ul li a{
+				display:block;
+				padding:8px 0;
+			}
+			#nav-secondary ul li a:hover{
+				display:block;
+			}

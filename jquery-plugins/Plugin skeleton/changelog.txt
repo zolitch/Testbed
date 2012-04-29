@@ -1,0 +1,60 @@
+SEE SITE NOTES AT THE BOTTOM OF THE FILE
+
+CHANGE LOG
+==========
+
+27 September 2011 - 14:40:01 - DT    cross domain files
+----------------------------------------------------------------------------------
+-   added cross domain file for flash
+-   added facebook/oauth channel.html
+-   added facebook xd_receiver
+
+
+23 September 2011 - 14:34:13 - DT    Added Media common media queries folders
+----------------------------------------------------------------------------------
+
+-   Now got folders within css folder which are designed for css relating to common
+    media queries. The core.css files are included within the htmlhead partial
+    with media attributes so that only the appropriate files are downloaded
+
+
+
+12 July 2011 - 13:54:23 - SZ	New Front End Templating setup
+----------------------------------------------------------------------------------
+-	The Appia project will now export different versions of the site to dev.
+	
+-	The dev url ie: frontent.projectName.aquepreview.com will now point to a generic Aqueduct index.html file in the root.
+	This file will contain links to the current working dev version (dev/) and previous sprint versions (sprint-1/ ,sprint-2/ etc)
+	The data for this is pulled from the updated model/global.js file.
+	
+-	model/global.js now contains a pages object and version array. 
+	We still need to find a way to dynamically update the pages obect here based on the pages existing in pages/ folder.
+	It is a manual process for now.
+	
+- 	There is other functionality that needs to be added to the build scripts too. 
+	The index file for the root on the server needs to be extracted and renamed from 'root-index.html' to'index.html'
+	and placed in the root of the dev frontend server. The site then needs to replace what exists in the dev/folder.
+	On version change, a new version folder needs to be created and the existing dev/ version moved to it.
+	
+
+
+SITE NOTES
+==========
+This site uses Appia which is a static templating system developed by Aqueduct which can be
+found at http://github.com/aqueduct/appia
+
+Please refer to the _exports folder if there is one, otherwise run the appia.exe to
+start the internal server.
+
+Anything in the pages folder should be accessed from the route.
+
+DEVELOPER NOTES
+===============
+
+Please use this format for logs:
+
+12 July 2011 - 10:54:46 - DT	title
+----------------------------------------------------------------------------------
+
+
+

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE cross-domain-policy SYSTEM "http://www.adobe.com/xml/dtds/cross-domain-policy.dtd">
+<cross-domain-policy>
+     
+     
+<!-- Read this: www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html -->
+    <site-control permitted-cross-domain-policies="all"/>
+
+    <!-- facebook -->
+    <allow-access-from domain="*.fbcdn.net" to-ports="80" secure="false"/>
+    <allow-http-request-headers-from domain="*.fbcdn.net" headers="80" secure="false"/>
+    <allow-access-from domain="*.facebook.com" to-ports="80" secure="false"/>
+    <allow-http-request-headers-from domain="*.facebook.com" headers="80" secure="false"/>
+
+</cross-domain-policy>
+

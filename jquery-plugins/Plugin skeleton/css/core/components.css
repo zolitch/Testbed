@@ -1,0 +1,34 @@
+/*
+    Components
+    
+    - basic reusable items which are simple
+    - components cannot contain child components or modules
+    
+    Component styles should be grouped together with a heading name
+    and description. Styles within each group should then appear as
+    they do in the markup including indentation.
+    
+    Component definitions should be ordered alphabetically.
+    
+    See example below. 
+    (Note: A space has been added next to * to prevent this comment block from breaking.
+    This would be removed when used)
+
+/ *
+	cp-componentName
+	Description of component
+----------------------------------------* /
+.cp-componentName {}
+	.cp-componentName-member {}
+	.cp-componentName a {}
+
+/ *
+	cp-secondComponentName
+	Description of component
+----------------------------------------* /
+.cp-secondComponentName {}
+	.cp-secondComponentName-member {}
+	.cp-secondComponentName a {}
+
+
+*/
