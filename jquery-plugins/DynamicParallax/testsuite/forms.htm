@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+	<head>
+		<title>Form Standards : Dave Taylor(@davetayls)</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta http-equiv="Content-Language" content="en-GB" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+
+		<link rel="stylesheet" href="../css/brand/reset.css" />
+		<link rel="stylesheet" href="../css/brand/brand.css" />
+		<link rel="stylesheet" href="../css/core/forms.css" />
+
+		<style type="text/css">
+			.required { color: #900; }
+		</style>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+
+	</head>
+	<body>
+		<script type="text/javascript">
+			$().ready(function(){
+				$("#showErrors").click(function(){
+					$(".field-item")
+						.addClass("field-itemTerror")
+						.append('\<\span class="label-error-msg">there is a validation error on this field</\span>')
+						.prepend('<span class="error-num"><span class="visuallyhidden">Error: </span>1</span>');
+					$(".field-group")
+						.addClass("field-groupTerror")
+						.prepend('<span class="error-num"><span class="visuallyhidden">Error: </span>1</span>');
+					$("fieldset").addClass("fieldsetTerror");
+					$(".form-errorSummary").show();
+					return false;
+				});
+				$("#hideErrors").click(function(){
+					$(".label-error-msg").remove();
+					$(".field-item").removeClass("field-itemTerror");
+					$(".field-group").removeClass("field-groupTerror");
+					$("fieldset").removeClass("fieldsetTerror");
+					$(".form-errorSummary").hide();
+					$('.error-num').remove();
+					return false;
+				});
+				$("#formTypeOptions input[type=radio]").click(function(){
+					$("#mainForm").attr("class","formT"+$(this).attr("value"));
+				});
+			});
+			
+		</script>
+		<h1>Form Standards - framework design</h1>
+		<p>Contact: <a href="http://www.the-taylors.org">Dave Taylor</a></p>
+		<p>Here are some standards for form elements which I have put together which allow easy design customisation and take in to consideration common layouts.</p>
+		<p>Any more complex layouts within these form standards would be coded as individual components overriding the common form styles.</p>
+
+							<!-- form -->
+							<div id="mainForm" class="formTmargin">
+								
+								<h2>Display options (required JavaScript)</h2>
+								<div class="button-group">
+									<button id="showErrors" type="submit">Show error state</button>
+									<button id="hideErrors" type="submit">Hide error state</button>
+								</div>
+
+								<div id="formTypeOptions" class="field-group cc">
+									<span class="field-group-header">Form type:</span>
+									<ul class="field-radioItems">
+										<li class="field-item">
+											<input type="radio" name="formType" value="margin" checked="checked" />
+											<label class="label-text">Margin</label>
+											<div class="label-detail">
+												This displays the label to the left of the inputs
+											</div>									
+										</li>
+										<li class="field-item">
+											<input type="radio" name="formType" value="stack" />
+											<label class="label-text">Stack</label>
+											<div class="label-detail">
+												This displays the label above the inputs
+											</div>									
+										</li>
+									</ul>
+								</div>
+								
+								<h2>Form elements</h2>
+
+								<fieldset>
+									<legend>Standard label and input</legend>
+
+									<div class="form-errorSummary" style="display:none;">
+										<h4>error header</h4>
+										<ul>
+											<li><a href="#error1">errordetails</a></li>
+											<li><a href="#error1">errordetails</a></li>
+											<li><a href="#error1">errordetails</a></li>
+											<li><a href="#error1">errordetails</a></li>
+											<li><a href="#error1">errordetails</a></li>
+										</ul>
+									</div>
+
+									<h3>Basic</h3>
+									<div class="field-item">
+										<label class="label-text">Email</label>
+										<input type="file" />
+									</div>
+									<h3>Example with required</h3>
+									<div class="field-item">
+										<label class="label-text">Email <abbr class="required" title="required">*</abbr></label>
+										<input id="email1" type="text" value="text" />									
+									</div>
+									<h3>Example with other elements</h3>
+									<div class="field-item">
+										<label class="label-text">Email</label>
+										<select>
+											<option value="">options</option>
+										</select>
+									</div>
+									<div class="field-item">
+										<label class="label-text">Email</label>
+										<textarea id="textareaelem" rows="10" cols="30">text content</textarea>
+									</div>
+									<div class="button-group">
+										<input id="validate" type="submit" value="Validate" />
+										<button type="submit">Button</button>
+										<button type="submit"><span class="btn-l"></span><span>Styled Button</span></button>
+									</div>
+									<h3>Wrap buttons in a <code>&lt;div class="button-group"&gt;</code></h3>
+									<div class="button-group">
+										<input type="submit" value="Button" />
+										<button type="submit">Button</button>
+									</div>
+								</fieldset>
+
+
+								<fieldset>
+									<legend>Grouped inputs</legend>
+
+									<h3>Vertical checkboxes/radios</h3>
+
+									<h4>Group default</h4>
+									<div class="field-group cc">
+										<span class="field-group-header">Name:</span>
+										<ul class="field-radioItems">
+											<li class="field-item">
+												<input type="radio" name="surname" />
+												<label id="surname" class="label-text">Name Surname</label>
+												<div class="label-detail">
+													Further detail about a specific field item
+												</div>									
+											</li>
+											<li class="field-item">
+												<input type="radio" name="surname" value="anonymous" />
+												<label class="label-text">Anonymous</label>
+												<div class="label-detail">
+													Further detail about a specific field item
+												</div>									
+											</li>
+											<li class="field-item">
+												<input type="checkbox" name="surname" />
+												<label class="label-text">Name Surname</label>
+											</li>
+											<li class="field-item">
+												<input type="checkbox" name="surname" value="anonymous" />
+												<label class="label-text">Anonymous</label>
+											</li>
+										</ul>
+									</div>
+
+									<h4>Vertical tight left with no heading</h4>
+									<div class="field-group cc">
+										<ul class="field-radioItems">
+											<li class="field-item">
+												<input type="radio" name="surname" />
+												<label id="surname" class="label-text">Name Surname</label>										
+												<div class="label-detail">
+													Further detail about a specific field item
+												</div>									
+											</li>
+											<li class="field-item">
+												<input type="radio" name="surname" value="anonymous" />
+												<label class="label-text">Anonymous</label>
+												<div class="label-detail">
+													Further detail about a specific field item
+												</div>									
+											</li>
+											<li class="field-item">
+												<input type="checkbox" name="surname" />
+												<label class="label-text">Name Surname</label>
+											</li>
+											<li class="field-item">
+												<input type="checkbox" name="surname" value="anonymous" />
+												<label class="label-text">Anonymous</label>
+											</li>
+										</ul>
+									</div>
+
+
+	
+									<h3>Inline checkboxes/radios</h3>
+									<div class="field-group field-groupTh">
+										<span class="field-group-header">Name:</span>
+										<ul class="field-checkItems">
+											<li class="field-item">
+												<input type="checkbox" name="surname" />
+												<label class="label-text">Name Surname</label>
+											</li>
+											<li class="field-item">
+												<input type="checkbox" name="surname" value="anonymous" />
+												<label class="label-text">Anonymous</label>
+											</li>
+											<li class="field-item">
+												<input type="checkbox" name="surname" />
+												<label class="label-text">Name Surname</label>
+											</li>
+											<li class="field-item">
+												<input type="checkbox" name="surname" value="anonymous" />
+												<label class="label-text">Anonymous</label>
+											</li>
+										</ul>
+									</div>
+	
+									<h4>Force margin header</h4>
+									<div class="field-group field-groupTh">
+										<span class="field-group-header field-group-headerTmargin">Name:</span>
+										<ul class="field-radioItems">
+											<li class="field-item">
+												<input type="radio" name="surname" />
+												<label class="label-text">Name Surname</label>
+											</li>
+											<li class="field-item">
+												<input type="radio" name="surname" value="anonymous" />
+												<label class="label-text">Anonymous</label>
+											</li>
+											<li class="field-item">
+												<input type="radio" name="surname" />
+												<label class="label-text">Name Surname</label>
+											</li>
+											<li class="field-item">
+												<input type="radio" name="surname" value="anonymous" />
+												<label class="label-text">Anonymous</label>
+											</li>
+										</ul>
+									</div>
+
+									<h4>Force stack header</h4>
+									<div class="field-group field-groupTh">
+										<span class="field-group-header field-group-headerTstack">Name:</span>
+										<ul class="field-radioItems">
+											<li class="field-item">
+												<input type="radio" name="surname" />
+												<label class="label-text">Name Surname</label>
+											</li>
+											<li class="field-item">
+												<input type="radio" name="surname" value="anonymous" />
+												<label class="label-text">Anonymous</label>
+											</li>
+											<li class="field-item">
+												<input type="radio" name="surname" />
+												<label class="label-text">Name Surname</label>
+											</li>
+											<li class="field-item">
+												<input type="radio" name="surname" value="anonymous" />
+												<label class="label-text">Anonymous</label>
+											</li>
+										</ul>
+									</div>
+
+
+									<h3>Special</h3>
+									<div class="field-group cp-dateField">
+										<span class="field-group-header">Date:</span>
+										<div class="field-item">
+											<label class="label-text">Day</label>
+											<input type="text" name="day" />
+										</div>
+										<div class="field-item">
+											<label class="label-text">Month</label>
+											<select name="month">
+												<option>Jan</option>
+											</select>
+										</div>
+										<div class="field-item">
+											<label class="label-text">Year</label>
+											<select name="year">
+												<option>2010</option>
+											</select>
+										</div>
+									</div>
+									
+								</fieldset>
+								
+							</div><!-- /form -->
+	</body>
+</html>

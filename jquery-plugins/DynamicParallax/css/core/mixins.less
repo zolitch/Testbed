@@ -1,0 +1,74 @@
+/*
+    Mixins and variables
+    
+*/
+
+/*
+    =>  Text and colors
+----------------------------------------*/
+@font: 'FranklinGothicURW-Dem',Arial,Helvetica,'Nimbus Sans L','Free Sans',Sans-Serif;
+@subfont: 'FranklinGothicURW-Boo',Arial,Helvetica,'Nimbus Sans L','Free Sans',Sans-Serif;
+@subsubfont: 'FranklinGothicURW-Med',Arial,Helvetica,'Nimbus Sans L','Free Sans',Sans-Serif;
+@basegrey: #515151;
+@medgrey: #6B7680;
+@lightgrey: #959595;
+@deepred: #C11E1C;
+
+
+
+
+/*
+    =>  Transitions
+----------------------------------------*/
+.transAll (@duration: 0.2s) {
+	-webkit-transition: all @duration linear;
+	-moz-transition: all @duration linear;
+	-o-transition: all @duration linear;
+	transition: all @duration linear;
+}
+.trans (@prop, @duration: 0.2s, @easing: ease-in) {
+	-webkit-transition: @prop @duration @easing;
+	-moz-transition: @prop @duration @easing;
+	-o-transition: @prop @duration @easing;
+	transition: @prop @duration @easing;
+}
+
+/*
+    =>  Backgrounds and sprites
+    	Sprite standards taken from this article:
+    	http://coding.smashingmagazine.com/2012/04/11/css-sprites-revisited
+
+    	Create sprite with even grid spaced by @spriteGrid variable
+    	The required sprite can then be referenced by it's grid position ie:
+    	.sprite(5,3) = background-position: -(5x32) -(3x32);
+    	
+----------------------------------------*/
+@spriteGrid: 32px;
+.spriteBg{
+   background: url(img/sprite.png) no-repeat;
+}
+.sprite(@x, @y) {
+   background-position: -(@x*@spriteGrid) -(@y*@spriteGrid);
+}
+
+.bgGrad (@color1, @color2) {
+	background: @color1;
+	background: -moz-linear-gradient(top,  @color1 0%, @color2 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color1), color-stop(100%,@color2));
+	background: -webkit-linear-gradient(top, @color1 0%, @color2 100%);
+	background: -o-linear-gradient(top, @color1 0%, @color2 100%);
+	background: -ms-linear-gradient(top, @color1 0%, @color2 100%);
+	background: linear-gradient(top, @color1 0%, @color2 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@color1, endColorstr=@color2,GradientType=0 );
+}
+/*Makes use of ir (image replacement class). Similar t0 .ico*/
+.spriteReplace(@x, @y) {
+   .sprite(@x, @y);
+   .ir;
+}
+.spriteReplace (@x, @y, @width, @height) {
+   .sprite(@x, @y);
+   .ir;
+   width: @width;
+   height: @height;
+}

@@ -1,0 +1,81 @@
+/*
+	3.0_1.screen-reusable
+	This file has two sections. 
+	
+	The first is for non-semantic helper styles:	
+	- This should contain basic reusable styles.
+	- This should not contain any component or module styles
+	- The styles should be in a rough alphabetical order
+	
+	The Second is for icon definitions
+	- icon names should be in a rough alphabetical order
+*/
+
+
+/* 
+ * Non-semantic helper classes 
+ */
+.align-left         { text-align: left !important; }
+.align-right        { text-align: right !important; }
+.float-right        { float: right !important; }
+.font-weight-normal { font-weight: normal !important; }
+.image-float-left	{ float: left; margin: 0 10px 10px 0px; }
+.image-float-right	{ float: right; margin: 0 0 10px 10px; }
+.tight-top          { padding-top: 0 !important; }
+
+/* inverse underlining of links, switch this if the default is inverse */
+.invunderline	{ text-decoration: none; } .invunderline:hover { text-decoration: underline; }
+
+/* for image replacement */
+.ir { display:block; text-indent:-999em; overflow:hidden; background-repeat: no-repeat; }
+
+/* Hide for both screenreaders and browsers
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden { display:none; visibility:hidden; } 
+
+/* Hide only visually, but have it available for screenreaders 
+   www.webaim.org/techniques/css/invisiblecontent/ 
+   */
+.visuallyhidden { 
+    position:absolute;
+    display: block; 
+    top: auto; 
+    left: -10000px; 
+    width: 1px; 
+    height: 1px; 
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* >> The Magnificent CLEARFIX << */
+.cc:after, .clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; font-size:0; }
+.cc, .clearfix { display: inline-block; }
+* html .cc, * html .clearfix { height: 1%; } /* Hides from IE-mac \*/
+.cc, .clearfix { display: block; }
+
+
+/*
+    Section for icons
+--------------------------------------------------------*/
+.ico {
+	background: url(/images/sprites.png) no-repeat left top;
+    display: inline-block;
+    height: 15px;
+    line-height: 15px;
+    text-align: left;
+    width: 15px;
+    zoom: 1;
+}
+.ie6 .ico { background-image: url(/images/sprites.png); }
+a.ico, a.ico span { cursor: pointer; }
+
+/* example icon */
+.ico-rss {
+    background-position: -30px 0;
+    height: 16px;
+    line-height: 16px;
+    width: 17px;
+}
+/*To ensure that ui tabs work!*/
+.ui-tabs .ui-tabs-hide { display: none !important; }

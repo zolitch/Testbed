@@ -1,0 +1,11 @@
+/**
+    => skipnav
+--------------------------------------------------*/
+#nav-accessibility      { position: absolute; top: 0px; left: 0px; z-index: 1000; }
+	#nav-accessibility h2   { position:absolute; top: auto; left: -10000px; width: 1px; height: 1px; }
+	#nav-accessibility ul   { list-style: none; margin:0; position:absolute; }
+		#nav-accessibility li	{ position: absolute; top: 0; left: 0; }
+			#nav-accessibility a    { position:absolute; display: block; top: auto; left: -10000px; width: 1px; height: 1px; }
+			#nav-accessibility a:active, 
+			#nav-accessibility a:focus { z-index: 1000; top: 0; left: 0px; width: 350px; height: 20px; background-color: white; border: 1px dotted #ccc; padding: 5px; }
+

@@ -1,0 +1,143 @@
+﻿
+/*
+    site core forms customisation
+----------------------------------------------------*/
+
+.scfForm {} /*form wrapper*/
+
+.scfTitleBorder {} /*form title*/
+
+.scfIntroBorder {} /*form introduction*/
+
+.scfValidationSummary {} /*summary of validation errors*/
+
+.scfSubmitSummary {} /*messgae after submit*/
+
+.scfSectionBorderAsFieldSet {} /*a fieldset wrapping a section of fields*/
+
+.scfSectionLegend {} /*legend for the fieldset*/ 
+
+.scfSectionBorder {} /*wrapper for fields if not part of section*/
+
+.scfSectionUsefulInfo {} /*help info for section*/
+
+.scfSectionContent {} /*wrapper for content of section*/
+.scfSectionContent label {}
+
+
+.validation-alert{} /*this class will be added to the parent of any field with a validation error*/
+.validation-alert input, .validation-alert textarea, .validation-alert select {
+    border:red; /*or any other styled validation*/
+}
+
+/*fields*/
+
+/*single line input*/
+.scfSingleLineTextBorder {}
+.halfAvailableWidth {} /*replaces scfSingleLineTextBorder if chosen in sitecore*/
+.thirdAvailableWidth {} /*replaces scfSingleLineTextBorder if chosen in sitecore*/
+.scfSingleLineTextLabel {}
+.scfSingleLineGeneralPanel {}
+.scfSingleLineTextBox {} /*the input*/
+.scfSingleLineTextUsefulInfo {}
+
+/*multiline textarea*/
+.scfMultipleLineTextBorder {}
+.scfMultipleLineTextLabel {}
+.scfMultipleLineGeneralPanel {}
+.scfMultipleLineTextBox {} /*the textarea*/
+.scfMultipleLineTextUsefulInfo {}
+
+/*password*/
+.scfPasswordBorder {}
+.scfPasswordLabel {}
+.scfPasswordGeneralPanel {}
+.scfPasswordTextBox {} /*the input*/
+.scfPasswordUsefulInfo {}
+
+/*email*/
+.scfEmailBorder {}
+.scfEmailLabel {}
+.scfEmailGeneralPanel {}
+.scfEmailTextBox {} /*the input*/
+.scfEmailUsefulInfo {}
+
+/*telephone*/
+.scfTelephoneBorder {}
+.scfTelephoneLabel {}
+.scfTelephoneGeneralPanel {}
+.scfTelephoneTextBox {} /*the input*/
+.scfTelephoneUsefulInfo {}
+
+/*sms/mms telephone*/
+.scfSmsTelephoneBorder {}
+.scfSmsTelephoneLabel {}
+.scfSmsTelephoneGeneralPanel {}
+.scfSmsTelephoneTextBox {} /*the input*/
+.scfSmsTelephoneUsefulInfo {}
+
+/*number field*/
+.scfNumberBorder {}
+.scfNumberLabel {}
+.scfNumberGeneralPanel {}
+.scfNumberTextBox {} /*the input*/
+
+/*date selectors*/
+.scfDateSelectorBorder {}
+.scfDateSelectorLabel {}
+.scfDateSelectorGeneralPanel {}
+.scfDateSelectorShortLabelYear {} /*label*/
+.scfDateSelectorShortLabelMonth {} /*label*/
+.scfDateSelectorShortLabelDay {} /*label*/
+.scfDateSelectorYear {} /*select*/
+.scfDateSelectorMonth {} /*select*/
+.scfDateSelectorDay {} /*select*/
+.scfDateSelectorUsefulInfo {}
+
+/*check box*/
+.scfCheckboxBorder {}
+.scfCheckbox {} /*span containing checkbox input and label. Standard*/
+.scfCheckboxUsefulInfo {}
+
+/*file uploader*/
+.scfFileUploadBorder {}
+.scfFileUploadLabel {}
+.scfFileUploadGeneralPanel {}
+.scfFileUpload {} /*input type file*/
+.scfFileUploadUsefulInfo {}
+
+/*listbox*/
+.scfListBoxBorder {}
+.scfListBoxLabel {}
+.scfListBoxGeneralPanel {}
+.scfListBox {} /*select*/
+.scfListBoxUsefulInfo {}
+
+/*radio button list*/
+.scfRadioButtonListBorder {}
+.scfRadioButtonListLabel {}
+.scfRadioButtonList {} /*table containing radio buttons*/
+.scfRadioButtonListUsefulInfo {}
+
+/*dropdown list*/
+.scfDropListBorder {}
+.scfDropListLabel {}
+.scfDropListGeneralPanel {}
+.scfDropList select {}
+.scfDropListUsefulInfo {}
+
+/*checkbox list*/
+.scfCheckBoxListBorder {}
+.scfCheckBoxListLabel {}
+.scfCheckBoxListGeneralPanel {}
+.scfCheckBoxList {} /*table containing checkboxes*/
+.scfCheckBoxListUsefulInfo {}
+
+
+
+
+/*Validator fields*/
+.scfValidator {} /*inline styles set by sitecore : color:Red;display:none;*/
+
+.scfValidatorRequired {} /*default text is '*' - inline styles set by sitecore (on validation error) : color:Red;*/
+.scfRequired {} /*default text is '*'

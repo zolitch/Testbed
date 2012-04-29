@@ -1,0 +1,35 @@
+/*
+    Modules
+    more involved sections of styles often containing modules and/or components
+	- prefix these classes with mod-
+	- order alphabetically according to containers
+*/
+
+.mod-area{
+	margin:16px 0;
+	padding:32px;
+	position:relative;
+}
+
+	.mod-area-items{}
+	.parallaxAsset{
+		position:absolute;
+		top:100px;
+		height:300px;
+		width:400px;
+		right:0;
+		background:url(/images/car.png) no-repeat;
+		background-position:0 0;
+	}
+		.mod-area-item{
+			padding:16px 0;
+		}
+			.mod-area-item-content{
+				
+			}
+			.parallaxItemAsset{
+				position:absolute;
+				right:300px;
+				bottom:0;
+				display:none;
+			}

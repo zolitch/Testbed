@@ -1,0 +1,8 @@
+@{ 
+	Func<dynamic, object> button = 
+	@<button style="color: @item.Color">@item.Name</button>;
+
+    Func<dynamic, string, bool> hasProperty = (obj, propertyName) => {
+        return obj is IDictionary<String, object> && ((IDictionary<String, object>)obj).ContainsKey(propertyName); 
+    };
+}
