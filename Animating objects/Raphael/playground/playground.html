@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Raphaël · PBall drop</title>
+        <script src="raphael.js"></script>
+        <style media="screen">
+            body {
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+            h1 {
+                font-weight: 400;
+                height: 5%;
+            }
+            #canvas {
+                height: 600px;
+                margin: 0 auto;
+                text-align: left;
+                width: 640px;
+            }
+            #code {
+                font-family: Consolas, Monaco, "Lucida Console", monospace;
+                height: 4em;
+                margin: 10px;
+                padding: 0;
+                width: 90%;
+            }
+            #run {
+                font-size: 2em;
+            }
+        </style>
+        <script>
+            window.onload = function () {
+                var paper = Raphael("canvas", 640, 600),
+                    btn = document.getElementById("run"),
+                    cd = document.getElementById("code");
+
+                (btn.onclick = function () {
+                    paper.clear();
+                    paper.rect(0, 0, 640, 600, 10).attr({fill: "#fff", stroke: "none"});
+                    try {
+                        (new Function("paper", "window", "document", cd.value)).call(paper, paper);
+                    } catch (e) {
+                        alert(e.message || e);
+                    }
+                })();
+            };
+        </script>
+    </head>
+    <body>
+        <h1></h1>
+        <div id="canvas"></div>
+        <div><textarea style="display:none" id="code">
+var circle1 = paper.circle(320, 240, 10).attr({fill: "#ddd", stroke: "#000", "stroke-width": 10, "stroke-opacity": 0.5});
+var circle2 = paper.circle(320, 240, 60).attr({fill: "#eee", stroke: "#000", "stroke-width": 10, "stroke-opacity": 0.5});
+var circle3 = paper.circle(320, 240, 20).attr({fill: "#aaa", stroke: "#000", "stroke-width": 10, "stroke-opacity": 0.5});
+var circle4 = paper.circle(320, 240, 30).attr({fill: "#bbb", stroke: "#000", "stroke-width": 10, "stroke-opacity": 0.5});
+var circle5 = paper.circle(320, 240, 50).attr({fill: "#000", stroke: "#aaa", "stroke-width": 10, "stroke-opacity": 0.5});
+var circle6 = paper.circle(320, 240, 90).attr({fill: "#000", stroke: "#aaa", "stroke-width": 10, "stroke-opacity": 0.5});
+
+var anim1 = Raphael.animation({cx: 320, cy: 400}, 900, "elastic" );
+var anim2 = Raphael.animation({cx: 220, cy: 400}, 1400, "elastic");
+var anim3 = Raphael.animation({cx: 420, cy: 400}, 500, "elastic");
+var anim4 = Raphael.animation({cx: 120, cy: 400}, 700, "elastic");
+var anim5 = Raphael.animation({cx: 520, cy: 400}, 1100, "elastic");
+
+circle1.animate(anim1.delay(0));
+circle2.animate(anim2.delay(100));
+circle3.animate(anim3.delay(200));
+circle4.animate(anim4.delay(300));
+circle5.animate(anim5.delay(400));
+
+    </textarea></div>
+        <div><button id="run" type="button">Run</button></div>
+    </body>
+</html>
